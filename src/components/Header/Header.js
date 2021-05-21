@@ -6,7 +6,7 @@ const Header = (props) => {
 
   return (
     <header>
-        <Link to="/countries"><h1>Where in the world?</h1></Link>
+        <Link to="/rest-countries-api"><h1>Where in the world?</h1></Link>
         <div className={`btn-switcher ${props.toggleClass}`} onClick={props.toggleAction}><span>{props.toggleName}</span></div>
     </header>
   );
