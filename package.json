@@ -1,5 +1,5 @@
 {
-  "homepage": "/",
+  "homepage": "/countries",
   "name": "rest-countries-api",
   "version": "0.1.0",
   "private": true,

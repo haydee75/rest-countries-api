@@ -22,7 +22,7 @@ const App = () => {
       <div className="page-wrapper">
         <Header toggleAction={toggleTrueFalse} toggleClass={toggleModeClass} toggleName={toggleModeName} />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/countries">
             <CountryContainer bgColorSelect={bgColorSelect} colorSelect={colorSelect} />
           </Route>
           <Route path="/countries/:countryId" component={(props) => <CountryDetails {...props} key={window.location.pathname}/>}/>
