@@ -1,0 +1,56 @@
+.DarkTheme {
+  background-color: #202c36;
+  height: 100vh;
+
+  span,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #fff;
+  }
+
+  header {
+    background: #2b3844;
+
+    span {
+      background: #2b3844;
+    }
+  }
+
+  .CountryContainer {
+    nav.CountryNavigation {
+      .SearchBar {
+        background: #2b3844;
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+
+        svg path {
+          fill: #fff;
+        }
+
+        input {
+          color: #fff;
+        }
+
+        input::-webkit-input-placeholder {
+          color: #fff;
+        }
+      }
+    }
+    .CountryCard .Box {
+      background: #2b3844;
+    }
+
+    .BackLink svg {
+      fill: #fff;
+    }
+
+    .Container .Column.Content .Borders .Border {
+      background: #2c3844;
+    }
+  }
+}

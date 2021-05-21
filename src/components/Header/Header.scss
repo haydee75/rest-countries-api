@@ -1,0 +1,45 @@
+header {
+  height: 80px;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 650px) {
+    padding: 0 16px;
+  }
+
+  .btn-switcher {
+    cursor: pointer;
+    position: relative;
+
+    &:before {
+      display: block;
+      margin-right: 8px;
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+
+    &.LightTheme {
+      &:before {
+        background: url("../../assets/moon.svg");
+        background-repeat: no-repeat;
+        right: 75px;
+        top: 2px;
+      }
+    }
+
+    &.DarkTheme {
+      &:before {
+        background: url("../../assets/sun.svg");
+        background-repeat: no-repeat;
+        right: 77px;
+        bottom: -1px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

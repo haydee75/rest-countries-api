@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CountryContainer from "./components/CountryContainer/CountryContainer";
+import CountryDetails from "./components/CountryDetails/CountryDetails"
+import Header from "./components/Header/Header"
+import NotFound from './components/NotFound';
+import { Switch, Route } from "react-router-dom";
+import "./App.scss";
+import "./DarkTheme.scss";
+import "./LightTheme.scss";
 
-function App() {
+const App = () => {
+  const [isToggled, setToggled] = useState(false);
+  const toggleTrueFalse = () => setToggled(!isToggled);
+
+  const toggleModeClass = isToggled ? "DarkTheme" : "LightTheme";
+  const toggleModeName = !isToggled ? "Dark Mode" : "Light Mode";
+  const bgColorSelect = isToggled ? "#2b3844" : "#fff";
+  const colorSelect = isToggled ? "#fff" : "#2b3844";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${toggleModeClass}`}>
+      <div className="page-wrapper">
+        <Header toggleAction={toggleTrueFalse} toggleClass={toggleModeClass} toggleName={toggleModeName} />
+        <Switch>
+          <Route exact path="/">
+            <CountryContainer bgColorSelect={bgColorSelect} colorSelect={colorSelect} />
+          </Route>
+          <Route path="/countries/:countryId" component={(props) => <CountryDetails {...props} key={window.location.pathname}/>}/>
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </div>
   );
-}
-
+};
 export default App;

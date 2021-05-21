@@ -1,0 +1,46 @@
+.CountryContainer {
+  padding: 0 80px;
+
+  @media only screen and (max-width: 650px) {
+    padding: 0 16px;
+  }
+
+  nav.CountryNavigation {
+    margin: 48px 0;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 650px) {
+      flex-direction: column;
+    }
+
+    .SearchBar {
+      margin-right: 10px;
+      border-radius: 5px;
+      max-width: 480px;
+      width: 100%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+
+      @media only screen and (max-width: 650px) {
+        max-width: 100%;
+        margin: 0 0 40px 0;
+      }
+
+      svg {
+        margin: 0 24px 0 32px;
+      }
+
+      input {
+        background: transparent;
+        border: none;
+        font-family: "Nunito", sans-serif;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+      }
+    }
+  }
+}
